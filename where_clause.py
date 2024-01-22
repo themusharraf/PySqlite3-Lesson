@@ -22,16 +22,26 @@ cursor = connection.cursor()
 
 # 3 Now we will insert data into Student table.
 # Insert data into the table
-cursor.execute("INSERT INTO Student VALUES (1,'Akbar', 'Jalolov', 21, 'IT')")
-cursor.execute("INSERT INTO Student VALUES (2,'Nodir', 'Boburov', 21, 'IT')")
-cursor.execute("INSERT INTO Student VALUES (3,'Jasur', 'Kamolov', 30, 'CIVIL')")
-cursor.execute("INSERT INTO Student VALUES (4,'Rustam', 'Akbarov', 32, 'COMP')")
+# cursor.execute("INSERT INTO Student VALUES (1,'Akbar', 'Jalolov', 21, 'IT')")
+# cursor.execute("INSERT INTO Student VALUES (2,'Nodir', 'Boburov', 21, 'IT')")
+# cursor.execute("INSERT INTO Student VALUES (3,'Jasur', 'Kamolov', 30, 'CIVIL')")
+# cursor.execute("INSERT INTO Student VALUES (4,'Rustam', 'Akbarov', 32, 'COMP')")
+#
+# # printing the cursor data
+# if cursor:
+#     print("Data Inserted !")
+# else:
+#     print("Data Insertion Failed !")
+
+# 4 To retrieve the data of the students whose Department is IT
+# IT bo'limi bo'lgan talabalarning ma'lumotlarini olish uchun
+
+# WHERE CLAUSE TO RETRIEVE DATA
+cursor.execute("SELECT * FROM Student WHERE Department = 'IT'")
 
 # printing the cursor data
-if cursor:
-    print("Data Inserted !")
-else:
-    print("Data Insertion Failed !")
+print(cursor.fetchall())
+
 
 
 
