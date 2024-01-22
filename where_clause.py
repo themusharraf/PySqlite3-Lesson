@@ -53,7 +53,7 @@ cursor = connection.cursor()
 # We can also use Wildcard characters with where clause as shown below
 # Ismi "R" bilan boshlanadigan talabalarning ma'lumotlarini olish uchun.
 
-cursor.execute("SELECT * from STUDENT WHERE First_name Like'R%'")
+cursor.execute("SELECT * from Student WHERE First_name Like'R%'")
 
 print(cursor.fetchall())
 
