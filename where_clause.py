@@ -3,7 +3,8 @@ import sqlite3
 connection = sqlite3.connect('data.db')
 cursor = connection.cursor()
 
-# 1 create table.----------------------------------
+# -------------------------------------------------------------
+# 1 create table.
 # cursor.execute("DROP TABLE IF EXISTS Student")
 # createTable = '''CREATE TABLE Student(
 #    Student_ID int,
@@ -14,13 +15,15 @@ cursor = connection.cursor()
 # )'''
 # cursor.execute(createTable)
 
-# 2 check the database creation data.-------------------------------
+# -------------------------------------------------------------
+# 2 check the database creation data.
 # if cursor:
 #     print("Database Created Successfully !")
 # else:
 #     print("Database Creation Failed !")
 
-# 3 Now we will insert data into Student table.---------------------------------
+# -------------------------------------------------------------
+# 3 Now we will insert data into Student table.
 # Insert data into the table
 # cursor.execute("INSERT INTO Student VALUES (1,'Akbar', 'Jalolov', 21, 'IT')")
 # cursor.execute("INSERT INTO Student VALUES (2,'Nodir', 'Boburov', 21, 'IT')")
@@ -33,16 +36,27 @@ cursor = connection.cursor()
 # else:
 #     print("Data Insertion Failed !")
 
-# 4 To retrieve the data of the students whose Department is IT------------------------------
+# -------------------------------------------------------------
+# 4 To retrieve the data of the students whose Department is IT
 # IT bo'limi bo'lgan talabalarning ma'lumotlarini olish uchun
 
 # WHERE CLAUSE TO RETRIEVE DATA
-cursor.execute("SELECT * FROM Student WHERE Department = 'IT'")
+# cursor.execute("SELECT * FROM Student WHERE Department = 'IT'")
 
 
 # printing the cursor data
-print(cursor.fetchall())
+# print(cursor.fetchall())
 # output [(1, 'Akbar', 'Jalolov', 21, 'IT'), (2, 'Nodir', 'Boburov', 21, 'IT')]
+
+# -------------------------------------------------------------
+# 5 To retrieve the data of the students whose First Name starts with ‘R’.
+# We can also use Wildcard characters with where clause as shown below
+# Ismi "R" bilan boshlanadigan talabalarning ma'lumotlarini olish uchun.
+
+cursor.execute("SELECT * from STUDENT WHERE First_name Like'R%'")
+
+print(cursor.fetchall())
+
 
 
 
