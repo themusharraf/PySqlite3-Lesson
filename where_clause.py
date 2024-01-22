@@ -58,7 +58,7 @@ cursor = connection.cursor()
 # print(cursor.fetchall())
 
 # -------------------------------------------------------------
-# 5 To update the data of student whose Student ID is 4
+# 6 To update the data of student whose Student ID is 4
 # Talaba ID raqami 4 bo'lgan talabaning ma'lumotlarini yangilash # noqa
 
 # where clause to update data
