@@ -62,11 +62,23 @@ cursor = connection.cursor()
 # Talaba ID raqami 4 bo'lgan talabaning ma'lumotlarini yangilash # noqa
 
 # where clause to update data
-cursor.execute("UPDATE STUDENT SET Department ='E&TC' WHERE Student_ID = 2")
+# cursor.execute("UPDATE Student SET Department ='E&TC' WHERE Student_ID = 2")
 
 # printing the cursor data
-cursor.execute("SELECT * from STUDENT")
+# cursor.execute("SELECT * from Student")
+# print(cursor.fetchall())
+
+# -------------------------------------------------------------
+# 7 To Delete the data of student whose Age ID is 30
+# Yosh ID raqami 30 bo'lgan talabaning ma'lumotlarini o'chirish # noqa
+
+
+# where clause to delete data
+cursor.execute("DELETE from Student WHERE Age = 32")
+
+cursor.execute("SELECT * from Student")
 print(cursor.fetchall())
+
 
 
 
