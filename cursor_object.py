@@ -4,3 +4,4 @@ connection = sqlite3.connect('data.db')
 
 connection.commit()
 connection.close()
+
