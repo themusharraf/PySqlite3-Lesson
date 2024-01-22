@@ -51,10 +51,21 @@ cursor = connection.cursor()
 # -------------------------------------------------------------
 # 5 To retrieve the data of the students whose First Name starts with ‘R’.
 # We can also use Wildcard characters with where clause as shown below
-# Ismi "R" bilan boshlanadigan talabalarning ma'lumotlarini olish uchun.
+# Ismi "R" bilan boshlanadigan talabalarning ma'lumotlarini olish uchun. # noqa
 
-cursor.execute("SELECT * from Student WHERE First_name Like'R%'")
+# cursor.execute("SELECT * from Student WHERE First_name Like'R%'")
+#
+# print(cursor.fetchall())
 
+# -------------------------------------------------------------
+# 5 To update the data of student whose Student ID is 4
+# Talaba ID raqami 4 bo'lgan talabaning ma'lumotlarini yangilash # noqa
+
+# where clause to update data
+cursor.execute("UPDATE STUDENT SET Department ='E&TC' WHERE Student_ID = 2")
+
+# printing the cursor data
+cursor.execute("SELECT * from STUDENT")
 print(cursor.fetchall())
 
 
