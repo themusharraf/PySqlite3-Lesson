@@ -81,9 +81,6 @@ print(cursor.fetchall())
 
 
 
-
-
-
 connection.commit()
 connection.close()
 
