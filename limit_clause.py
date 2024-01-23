@@ -5,8 +5,8 @@ connection = sqlite3.connect('data.db')
 cursor = connection.execute("SELECT * FROM customer_address LIMIT 3")
 
 
-for i in cursor:
-    print(i)
+for x in cursor:
+    print(x)
 
 connection.commit()
 connection.close()
