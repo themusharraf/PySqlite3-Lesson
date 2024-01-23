@@ -9,6 +9,5 @@ connection = sqlite3.connect('data.db')
 #          ADDRESS        CHAR(50)); ''')
 
 
-
 connection.commit()
 connection.close()
