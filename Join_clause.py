@@ -53,19 +53,76 @@ cursor = connection.cursor()
 #
 # ''')
 
-# INNER JOIN (OR JOIN) - ikkala jadvalda umumiy atributlarga ega bo'lgan yozuvlarni beradi.
-
-
+# ---------- INNER JOIN (OR JOIN) - ikkala jadvalda umumiy atributlarga ega bo'lgan yozuvlarni beradi. # noqa
 # Query for INNER JOIN
-sql = '''SELECT StudentID, StudentName, AdvisorName  FROM Student  INNER JOIN Advisor ON Student.AdvisorID = Advisor.AdvisorID;'''
+# sql = '''SELECT StudentID, StudentName, AdvisorName  FROM Student  INNER JOIN Advisor ON Student.AdvisorID = Advisor.AdvisorID;'''
+#
+# # Executing the query
+# cursor.execute(sql)
+#
+# # Fetching rows from the result table # ma'lumotlarni olish # noqa
+# result = cursor.fetchall()
+# for row in result:
+#     print(row)
+
+# ----------LEFT JOIN - chap jadvaldagi barcha yozuvlarni va faqat o'ng jadvaldagi umumiy yozuvlarni beradi. # noqa
+# Query for LEFT JOIN
+# sql = '''SELECT StudentID, StudentName, AdvisorName  FROM Student  LEFT JOIN Advisor USING(AdvisorID) ;'''
+#
+# # Executing the query
+# cursor.execute(sql)
+#
+# # Fetching rows from the result table
+# result = cursor.fetchall()
+# for row in result:
+#     print(row)
+
+# ----------RIGHT JOIN - o'ng jadvaldagi barcha yozuvlarni va faqat chap jadvaldagi umumiy yozuvlarni beradi. # noqa
+# Query for RIGHT JOIN
+# sql = '''SELECT StudentID, StudentName, AdvisorName  FROM Advisor  LEFT JOIN Student USING(AdvisorID);'''
+#
+# # Executing the query
+# cursor.execute(sql)
+#
+# # Fetching rows from the result table
+# result = cursor.fetchall()
+# for row in result:
+#     print(row)
+
+# ----------FULL OUTER JOIN - chap yoki o'ng jadvalda umumiy atribut mavjud bo'lganda barcha yozuvlarni beradi. # noqa
+
+# Query for FULL OUTER JOIN
+# sql = '''SELECT StudentID, StudentName, AdvisorName
+# FROM Student
+# LEFT JOIN Advisor
+# USING(AdvisorID)
+# UNION ALL
+# SELECT StudentID, StudentName, AdvisorName
+# FROM Advisor
+# LEFT JOIN Student
+# USING(AdvisorID)
+# WHERE Student.AdvisorID IS NULL;'''
+#
+# # Executing the query
+# cursor.execute(sql)
+#
+# # Fetching rows from the result table
+# result = cursor.fetchall()
+# for row in result:
+#     print(row)
+
+# ---------CROSS JOIN - bir jadvalning yozuvlarini boshqa jadvalning barcha boshqa yozuvlari bilan birga beradi.  # noqa
+# Query for CROSS JOIN
+sql = '''SELECT StudentID, StudentName, AdvisorName  FROM Student  CROSS JOIN Advisor;'''
 
 # Executing the query
 cursor.execute(sql)
 
-# Fetching rows from the result table # ma'lumotlarni olish # noqa
+# Fetching rows from the result table
 result = cursor.fetchall()
 for row in result:
     print(row)
+
 
 connection.commit()
 connection.close()
