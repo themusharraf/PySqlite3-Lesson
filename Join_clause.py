@@ -13,9 +13,59 @@ import sqlite3
 
 connection = sqlite3.connect('data.db')
 
+# Create cursor object
+cursor = connection.cursor()
+
+# Create and populate tables
+# cursor.executescript('''
+# CREATE TABLE Advisor(
+# AdvisorID INTEGER NOT NULL,
+# AdvisorName TEXT NOT NULL,
+# PRIMARY KEY(AdvisorID)
+# );
+#
+# CREATE TABLE Student(
+# StudentID NUMERIC NOT NULL,
+# StudentName NUMERIC NOT NULL,
+# AdvisorID INTEGER,
+# FOREIGN KEY(AdvisorID) REFERENCES Advisor(AdvisorID),
+# PRIMARY KEY(StudentID)
+# );
+#
+# INSERT INTO Advisor(AdvisorID, AdvisorName) VALUES
+# (1,"John Paul"),
+# (2,"Anthony Ali"),
+# (3,"Rustam Shokir"),
+# (4,"Salim Rustam"),
+# (5,"Arthur Clintwood");
+#
+# INSERT INTO Student(StudentID, StudentName, AdvisorID) VALUES
+# (501,"AllNc1",1),
+# (502,"AllNc2",1),
+# (503,"AllNc3",3),
+# (504,"AllNc4",2),
+# (505,"AllNc5",4),
+# (506,"AllNc6",2),
+# (507,"AllNc7",2),
+# (508,"AllNc8",3),
+# (509,"AllNc9",NULL),
+# (510,"AllNc10",1);
+#
+# ''')
+
+# INNER JOIN (OR JOIN) - ikkala jadvalda umumiy atributlarga ega bo'lgan yozuvlarni beradi.
 
 
+# Query for INNER JOIN
+sql = '''SELECT StudentID, StudentName, AdvisorName  FROM Student  INNER JOIN Advisor ON Student.AdvisorID = Advisor.AdvisorID;'''
+
+# Executing the query
+cursor.execute(sql)
+
+# Fetching rows from the result table # ma'lumotlarni olish # noqa
+result = cursor.fetchall()
+for row in result:
+    print(row)
 
 connection.commit()
 connection.close()
-
