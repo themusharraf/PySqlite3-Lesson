@@ -13,7 +13,10 @@ SQLite yordamida dasturni prototipini yaratish va keyin kodni PostgreSQL yoki Or
 
 ```sql
 import sqlite3
-con = sqlite3.connect("tutorial.db")
+con = sqlite3.connect("database.db")
+
+con.commit()
+con.close()
 ```
 
 conn.cursor() yordamida Cursor obyekti yaratamiz.
