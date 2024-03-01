@@ -11,7 +11,10 @@ ta'minlovchi va SQL so'rovlar tilining nostandart varianti yordamida ma'lumotlar
 imkonini beruvchi C kutubxonasi. Ba'zi ilovalar ichki ma'lumotlarni saqlash uchun SQLite dan foydalanishi mumkin.
 SQLite yordamida dasturni prototipini yaratish va keyin kodni PostgreSQL yoki Oracle kabi kattaroq maʼlumotlar bazasiga oʻtkazish ham mumkin.
 
-sqlite3.connect() yordamida ma'lumotlar bazasiga ulanamiz.
+```sql
+import sqlite3
+con = sqlite3.connect("tutorial.db")
+```
 
 conn.cursor() yordamida Cursor obyekti yaratamiz.
 
