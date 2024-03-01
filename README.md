@@ -19,14 +19,3 @@ con.commit()
 con.close()
 ```
 
-conn.cursor() yordamida Cursor obyekti yaratamiz.
-
-CREATE TABLE buyrug'i orqali jadvalni yaratamiz.
-
-INSERT INTO buyrug'i bilan ma'lumotni jadvalga qo'shamiz.
-
-SELECT buyrug'i bilan barcha malumotlarni olishimiz.
-
-commit() yordamida o'zgartirishlarni saqlashimiz.
-
-close() yordamida ulanishni yopishimiz.
